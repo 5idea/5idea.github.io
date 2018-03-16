@@ -48,6 +48,27 @@
 
             });
 
+
+            window.addEventListener('push', function (event) {
+                var title = 'Yay a message.';
+                var body = 'We have received a push message.';
+                var icon = '/images/icons/apple-icon-114x114.png';
+                var tag = 'simple-push-demo-notification-tag';
+                var data = {
+                    doge: {
+                        wow: 'such amaze notification data'
+                    }
+                };
+                event.waitUntil(
+                    self.registration.showNotification(title, {
+                        body: body,
+                        icon: icon,
+                        tag: tag,
+                        data: data
+                    })
+                );
+            });
+
         } else {
             console.warn('Push messaging is not supported');
         }
@@ -296,7 +317,7 @@
 
     <!-- Copyright -->
     <div id="copyright">
-        &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+        &copy; All rights reserved. | Design: <a href="#">5idea</a>
     </div>
 
 </div>
