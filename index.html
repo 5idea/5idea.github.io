@@ -32,6 +32,24 @@
     <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <script>
+        // 桌面端
+        var not = new Notification("show note", { icon: "newsong.svg", tag: "song" });
+        not.onclick = function() { dosth(this); };
+
+        // 在 SW 中使用
+        self.registration.showNotification("New mail from Alice", {
+            actions: [{action: 'archive', title: "Archive"}]
+        });
+
+        self.addEventListener('notificationclick', function(event) {
+            event.notification.close();
+            if (event.action === 'archive') {
+                silentlyArchiveEmail();
+            } else {
+                clients.openWindow("/inbox");
+            }
+        }, false);
+
         if ('serviceWorker' in navigator && 'PushManager' in window) {
 
             window.addEventListener('load', function () {
