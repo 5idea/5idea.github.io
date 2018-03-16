@@ -5,307 +5,310 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Halcyonic by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-        <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
-        <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        <script>
-            if ('serviceWorker' in navigator) {
+<head>
+    <title>5idea's 例子 by HTML5 UP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
 
-                window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
 
-                    navigator.serviceWorker.register('/sw.js').then(
+                navigator.serviceWorker.register('/sw.js')
+                    .then(
+                        function (registration) {// Registration was successful
+                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        },
 
-                        function(registration) {
-
-// Registration was successful
-
-                            console.log('ServiceWorker registration successful with scope: ', registration.scope); },
-
-                        function(err) {
-
-// registration failed :(
-
+                        function (err) {// registration failed :(
                             console.log('ServiceWorker registration failed: ', err);
-
                         });
 
-                });
+            });
 
-            }
-        </script>
+        } else {
+            console.warn('Push messaging is not supported');
+        }
 
-	</head>
-	<body>
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
-						<div class="row">
-							<div class="12u">
+    </script>
 
-								<!-- Logo -->
-									<h1><a href="#" id="logo">5idea</a></h1>
+</head>
+<body>
+<div id="page-wrapper">
 
-								<!-- Nav -->
-									<nav id="nav">
-										<a href="index.html">首頁</a>
-										<a href="threecolumn.html">技術選型</a>
-										<a href="twocolumn1.html">小程序</a>
-										<a href="twocolumn2.html">PWA</a>
-										<a href="onecolumn.html">個人簡介</a>
-									</nav>
+    <!-- Header -->
+    <div id="header-wrapper">
+        <header id="header" class="container">
+            <div class="row">
+                <div class="12u">
 
-							</div>
-						</div>
-					</header>
-					<div id="banner">
-						<div class="container">
-							<div class="row">
-								<div class="6u 12u(mobile)">
+                    <!-- Logo -->
+                    <h1><a href="#" id="logo">5idea</a></h1>
 
-									<!-- Banner Copy -->
-										<p>昨天，我们的团队收到Google团队发来的一封邮件，说到Chrome浏览器应用程序目前计划在2018年第一季度停止在Windows，Mac和Linux上工作，因为Chrome将继续专注于开放网络。Chrome团队现在正致力于在桌面上安装渐进式Web应用程序（PWA）。和原生应用比，PWA 又不需要用户安装，只需要浏览器支持 PWA 就可以了
-											应该做点有价值并且重要的事情了，20年专注IT/web,传统企业转型的可以联系我 ...</p>
-										<a href="tel:10000" class="button-big">给我打电话呀！</a>
+                    <!-- Nav -->
+                    <nav id="nav">
+                        <a href="index.html">首頁</a>
+                        <a href="threecolumn.html">技術選型</a>
+                        <a href="twocolumn1.html">小程序</a>
+                        <a href="twocolumn2.html">PWA</a>
+                        <a href="onecolumn.html">個人簡介</a>
+                    </nav>
 
-								</div>
-								<div class="6u 12u(mobile)">
+                </div>
+            </div>
+        </header>
+        <div id="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="6u 12u(mobile)">
 
-									<!-- Banner Image -->
-										<a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
+                        <!-- Banner Copy -->
+                        <p>
+                            昨天，我们的团队收到Google团队发来的一封邮件，说到Chrome浏览器应用程序目前计划在2018年第一季度停止在Windows，Mac和Linux上工作，因为Chrome将继续专注于开放网络。Chrome团队现在正致力于在桌面上安装渐进式Web应用程序（PWA）。和原生应用比，PWA
+                            又不需要用户安装，只需要浏览器支持 PWA 就可以了
+                            应该做点有价值并且重要的事情了，20年专注IT/web,传统企业转型的可以联系我 ...</p>
+                        <a href="tel:10000" class="button-big">给我打电话呀！</a>
 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                    </div>
+                    <div class="6u 12u(mobile)">
 
-			<!-- Features -->
-				<div id="features-wrapper">
-					<div id="features">
-						<div class="container">
-							<div class="row">
-								<div class="3u 12u(mobile)">
+                        <!-- Banner Image -->
+                        <a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt=""/></a>
 
-									<!-- Feature #1 -->
-										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt="" /></a>
-											<h2>原生应用界面</h2>
-											<p>	在某些情况下 PWA 应用可以隐藏浏览器本身的所有视觉成分，光从UI和UX上看，很容易认为这就是一个原生界面，如下图其实都是PWA而不是原生应用。
-											</p>
-										</section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-								</div>
-								<div class="3u 12u(mobile)">
+    <!-- Features -->
+    <div id="features-wrapper">
+        <div id="features">
+            <div class="container">
+                <div class="row">
+                    <div class="3u 12u(mobile)">
 
-									<!-- Feature #2 -->
-										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt="" /></a>
-											<h2>消息推送</h2>
-											<p>
-												用户只要允许，即使网页关闭后仍然可以在系统通知栏收到推送消息。
-											</p>
-										</section>
+                        <!-- Feature #1 -->
+                        <section>
+                            <a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt=""/></a>
+                            <h2>原生应用界面</h2>
+                            <p> 在某些情况下 PWA 应用可以隐藏浏览器本身的所有视觉成分，光从UI和UX上看，很容易认为这就是一个原生界面，如下图其实都是PWA而不是原生应用。
+                            </p>
+                        </section>
 
-								</div>
-								<div class="3u 12u(mobile)">
+                    </div>
+                    <div class="3u 12u(mobile)">
 
-									<!-- Feature #3 -->
-										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic03.jpg" alt="" /></a>
-											<h2>后台加载</h2>
-											<p>
-												往常的网页应用只要关闭了网页他的生命就结束了，现在引入了一个 Service Worker 的概念，即使网页关闭，PWA 仍然可以在后台运行获取数据更新
-											</p>
-										</section>
+                        <!-- Feature #2 -->
+                        <section>
+                            <a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt=""/></a>
+                            <h2>消息推送</h2>
+                            <p>
+                                用户只要允许，即使网页关闭后仍然可以在系统通知栏收到推送消息。
+                            </p>
+                        </section>
 
-								</div>
-								<div class="3u 12u(mobile)">
+                    </div>
+                    <div class="3u 12u(mobile)">
 
-									<!-- Feature #4 -->
-										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic04.jpg" alt="" /></a>
-											<h2>离线使用</h2>
-											<p>
-												PWA 打开后会缓存一些内容，之后再次访问即使没有网络也可以浏览之前的页面（如同IE时代的离线浏览）
-											</p>
-										</section>
+                        <!-- Feature #3 -->
+                        <section>
+                            <a href="#" class="bordered-feature-image"><img src="images/pic03.jpg" alt=""/></a>
+                            <h2>后台加载</h2>
+                            <p>
+                                往常的网页应用只要关闭了网页他的生命就结束了，现在引入了一个 Service Worker 的概念，即使网页关闭，PWA 仍然可以在后台运行获取数据更新
+                            </p>
+                        </section>
 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                    </div>
+                    <div class="3u 12u(mobile)">
 
-			<!-- Content -->
-				<div id="content-wrapper">
-					<div id="content">
-						<div class="container">
-							<div class="row">
-								<div class="4u 12u(mobile)">
+                        <!-- Feature #4 -->
+                        <section>
+                            <a href="#" class="bordered-feature-image"><img src="images/pic04.jpg" alt=""/></a>
+                            <h2>离线使用</h2>
+                            <p>
+                                PWA 打开后会缓存一些内容，之后再次访问即使没有网络也可以浏览之前的页面（如同IE时代的离线浏览）
+                            </p>
+                        </section>
 
-									<!-- Box #1 -->
-										<section>
-											<header>
-												<h2>原生应用界面</h2>
-												<h3>A subheading about who we are</h3>
-											</header>
-											<a href="#" class="feature-image"><img src="images/pic05.jpg" alt="" /></a>
-											<p>
-												在某些情况下 PWA 应用可以隐藏浏览器本身的所有视觉成分，光从UI和UX上看，很容易认为这就是一个原生界面，如下图其实都是PWA而不是原生应用。
-											</p>
-										</section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-								</div>
-								<div class="4u 12u(mobile)">
+    <!-- Content -->
+    <div id="content-wrapper">
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="4u 12u(mobile)">
 
-									<!-- Box #2 -->
-										<section>
-											<header>
-												<h2>桌面图标</h2>
-												<h3>A subheading about what we do</h3>
-											</header>
-											<ul class="check-list">
-												PWA只要配上一个图标，再放快捷方式在桌面上（比如一定时间内第二次访问PWA会自动询问是否添加快捷方式到桌面），就真的和原生系统无异了，打开的速度也很快（当然功能不能很庞大）
-											</ul>
-										</section>
+                        <!-- Box #1 -->
+                        <section>
+                            <header>
+                                <h2>原生应用界面</h2>
+                                <h3>A subheading about who we are</h3>
+                            </header>
+                            <a href="#" class="feature-image"><img src="images/pic05.jpg" alt=""/></a>
+                            <p>
+                                在某些情况下 PWA 应用可以隐藏浏览器本身的所有视觉成分，光从UI和UX上看，很容易认为这就是一个原生界面，如下图其实都是PWA而不是原生应用。
+                            </p>
+                        </section>
 
-								</div>
-								<div class="4u 12u(mobile)">
+                    </div>
+                    <div class="4u 12u(mobile)">
 
-									<!-- Box #3 -->
-										<section>
-											<header>
-												<h2>What People Are Saying</h2>
-												<h3>And a final subheading about our clients</h3>
-											</header>
-											<ul class="quote-list">
-												<li>
-													<img src="images/pic06.jpg" alt="" />
-													<p>"Neque nisidapibus mattis"</p>
-													<span>Jane Doe, CEO of UntitledCorp</span>
-												</li>
-												<li>
-													<img src="images/pic07.jpg" alt="" />
-													<p>"Lorem ipsum consequat!"</p>
-													<span>John Doe, President of FakeBiz</span>
-												</li>
-												<li>
-													<img src="images/pic08.jpg" alt="" />
-													<p>"Magna veroeros amet tempus"</p>
-													<span>Mary Smith, CFO of UntitledBiz</span>
-												</li>
-											</ul>
-										</section>
+                        <!-- Box #2 -->
+                        <section>
+                            <header>
+                                <h2>桌面图标</h2>
+                                <h3>A subheading about what we do</h3>
+                            </header>
+                            <ul class="check-list">
+                                PWA只要配上一个图标，再放快捷方式在桌面上（比如一定时间内第二次访问PWA会自动询问是否添加快捷方式到桌面），就真的和原生系统无异了，打开的速度也很快（当然功能不能很庞大）
+                            </ul>
+                        </section>
 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                    </div>
+                    <div class="4u 12u(mobile)">
 
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
-						<div class="row">
-							<div class="8u 12u(mobile)">
+                        <!-- Box #3 -->
+                        <section>
+                            <header>
+                                <h2>What People Are Saying</h2>
+                                <h3>And a final subheading about our clients</h3>
+                            </header>
+                            <ul class="quote-list">
+                                <li>
+                                    <img src="images/pic06.jpg" alt=""/>
+                                    <p>"Neque nisidapibus mattis"</p>
+                                    <span>Jane Doe, CEO of UntitledCorp</span>
+                                </li>
+                                <li>
+                                    <img src="images/pic07.jpg" alt=""/>
+                                    <p>"Lorem ipsum consequat!"</p>
+                                    <span>John Doe, President of FakeBiz</span>
+                                </li>
+                                <li>
+                                    <img src="images/pic08.jpg" alt=""/>
+                                    <p>"Magna veroeros amet tempus"</p>
+                                    <span>Mary Smith, CFO of UntitledBiz</span>
+                                </li>
+                            </ul>
+                        </section>
 
-								<!-- Links -->
-									<section>
-										<h2>Links to Important Stuff</h2>
-										<div>
-											<div class="row">
-												<div class="3u 12u(mobile)">
-													<ul class="link-list last-child">
-														<li><a href="#">Neque amet dapibus</a></li>
-														<li><a href="#">Sed mattis quis rutrum</a></li>
-														<li><a href="#">Accumsan suspendisse</a></li>
-														<li><a href="#">Eu varius vitae magna</a></li>
-													</ul>
-												</div>
-												<div class="3u 12u(mobile)">
-													<ul class="link-list last-child">
-														<li><a href="#">Neque amet dapibus</a></li>
-														<li><a href="#">Sed mattis quis rutrum</a></li>
-														<li><a href="#">Accumsan suspendisse</a></li>
-														<li><a href="#">Eu varius vitae magna</a></li>
-													</ul>
-												</div>
-												<div class="3u 12u(mobile)">
-													<ul class="link-list last-child">
-														<li><a href="#">Neque amet dapibus</a></li>
-														<li><a href="#">Sed mattis quis rutrum</a></li>
-														<li><a href="#">Accumsan suspendisse</a></li>
-														<li><a href="#">Eu varius vitae magna</a></li>
-													</ul>
-												</div>
-												<div class="3u 12u(mobile)">
-													<ul class="link-list last-child">
-														<li><a href="#">Neque amet dapibus</a></li>
-														<li><a href="#">Sed mattis quis rutrum</a></li>
-														<li><a href="#">Accumsan suspendisse</a></li>
-														<li><a href="#">Eu varius vitae magna</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-							</div>
-							<div class="4u 12u(mobile)">
+    <!-- Footer -->
+    <div id="footer-wrapper">
+        <footer id="footer" class="container">
+            <div class="row">
+                <div class="8u 12u(mobile)">
 
-								<!-- Blurb -->
-									<section>
-										<h2>An Informative Text Blurb</h2>
-										<p>
-											Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu
-											varius nibh. Suspendisse vitae magna eget odio amet mollis. Duis neque nisi,
-											dapibus sed mattis quis, sed rutrum accumsan sed. Suspendisse eu varius nibh
-											lorem ipsum amet dolor sit amet lorem ipsum consequat gravida justo mollis.
-										</p>
-									</section>
+                    <!-- Links -->
+                    <section>
+                        <h2>Links to Important Stuff</h2>
+                        <div>
+                            <div class="row">
+                                <div class="3u 12u(mobile)">
+                                    <ul class="link-list last-child">
+                                        <li><a href="#">Neque amet dapibus</a></li>
+                                        <li><a href="#">Sed mattis quis rutrum</a></li>
+                                        <li><a href="#">Accumsan suspendisse</a></li>
+                                        <li><a href="#">Eu varius vitae magna</a></li>
+                                    </ul>
+                                </div>
+                                <div class="3u 12u(mobile)">
+                                    <ul class="link-list last-child">
+                                        <li><a href="#">Neque amet dapibus</a></li>
+                                        <li><a href="#">Sed mattis quis rutrum</a></li>
+                                        <li><a href="#">Accumsan suspendisse</a></li>
+                                        <li><a href="#">Eu varius vitae magna</a></li>
+                                    </ul>
+                                </div>
+                                <div class="3u 12u(mobile)">
+                                    <ul class="link-list last-child">
+                                        <li><a href="#">Neque amet dapibus</a></li>
+                                        <li><a href="#">Sed mattis quis rutrum</a></li>
+                                        <li><a href="#">Accumsan suspendisse</a></li>
+                                        <li><a href="#">Eu varius vitae magna</a></li>
+                                    </ul>
+                                </div>
+                                <div class="3u 12u(mobile)">
+                                    <ul class="link-list last-child">
+                                        <li><a href="#">Neque amet dapibus</a></li>
+                                        <li><a href="#">Sed mattis quis rutrum</a></li>
+                                        <li><a href="#">Accumsan suspendisse</a></li>
+                                        <li><a href="#">Eu varius vitae magna</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-							</div>
-						</div>
-					</footer>
-				</div>
+                </div>
+                <div class="4u 12u(mobile)">
 
-			<!-- Copyright -->
-				<div id="copyright">
-					&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
-				</div>
+                    <!-- Blurb -->
+                    <section>
+                        <h2>An Informative Text Blurb</h2>
+                        <p>
+                            Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu
+                            varius nibh. Suspendisse vitae magna eget odio amet mollis. Duis neque nisi,
+                            dapibus sed mattis quis, sed rutrum accumsan sed. Suspendisse eu varius nibh
+                            lorem ipsum amet dolor sit amet lorem ipsum consequat gravida justo mollis.
+                        </p>
+                    </section>
 
-		</div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+    <!-- Copyright -->
+    <div id="copyright">
+        &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+    </div>
 
-	</body>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/skel-viewport.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>

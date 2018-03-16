@@ -1,11 +1,11 @@
 {
   "name": "康樂號",
   "theme_color": "#2196f3",
-  "background_color": "#2196f3",
-  "display": "fullscreen",
+  "background_color": "#2196f3",// 刚打开页面时的背景
+  "display": "fullscreen",//独立显示
   "Scope": "/",
-  "start_url": "/index.html",
-  "icons": [
+  "start_url": "/index.html",// 启动的页面
+  "icons": [// 应用显示图标，根据容器大小适配
     {
       "src": "images/icons/icon-72x72.png",
       "sizes": "72x72",
