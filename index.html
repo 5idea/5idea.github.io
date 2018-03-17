@@ -38,7 +38,7 @@
                     navigator.serviceWorker.ready.then(function(registration) {
                         registration.showNotification('Vibration Sample', {
                             body: 'Buzz! Buzz!',
-                            icon: '../images/touch/chrome-touch-icon-192x192.png',
+                            icon: 'images/icons/apple-icon-120x120.png',
                             vibrate: [200, 100, 200, 100, 200, 100, 200],
                             tag: 'vibration-sample'
                         });
@@ -50,6 +50,12 @@
 
         // 桌面端
         var not = new Notification("show note", { icon: "newsong.svg", tag: "song" });
+        var not2 = new Notification("联系我", {
+            body: 'Buzz! Buzz!',
+            icon: 'images/icons/apple-icon-120x120.png',
+            vibrate: [200, 100, 200, 100, 200, 100, 200],
+            tag: vibration-sample'
+        });
 //        not.onclick = function() { dosth(this); };
 
 
