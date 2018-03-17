@@ -32,21 +32,7 @@
     <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <script>
-        function showNotification() {
-            Notification.requestPermission(function (result) {
-                if (result === 'granted') {
-                    navigator.serviceWorker.ready.then(function (registration) {
-                        registration.showNotification('Vibration Sample', {
-                            body: 'Buzz! Buzz!',
-                            icon: 'images/icons/apple-icon-120x120.png',
-                            vibrate: [200, 100, 200, 100, 200, 100, 200],
-                            tag: 'vibration-sample'
-                        });
-                    });
-                }
-            });
-        }
-        showNotification();
+
 
         // 桌面端
         var not = new Notification("show note", {
@@ -55,32 +41,41 @@
             vibrate: [200, 100, 200, 100, 200, 100, 200],
             tag: 'vibration - sample'
         });
-
-        var not2 = new Notification("联系我", {
-            body: 'Buzz! Buzz!',
-            icon: 'images/icons/apple-icon-120x120.png',
-            vibrate: [200, 100, 200, 100, 200, 100, 200],
-            tag: 'vibration - sample'
-        });
-        //        not.onclick = function() { dosth(this); };
+        not.onclick = function() { dosth(this); };
 
 
         if ('serviceWorker' in navigator && 'PushManager' in window) {
 
-            // 在 SW 中使用
-            window.showNotification("");
-            self.registration.showNotification("New mail from Alice", {
-                actions: [{action: 'archive', title: "Archive"}]
-            });
+//            function showNotification() {
+//                Notification.requestPermission(function (result) {
+//                    if (result === 'granted') {
+//                        navigator.serviceWorker.ready.then(function (registration) {
+//                            registration.showNotification('Vibration Sample', {
+//                                body: 'Buzz! Buzz!',
+//                                icon: 'images/icons/apple-icon-120x120.png',
+//                                vibrate: [200, 100, 200, 100, 200, 100, 200],
+//                                tag: 'vibration-sample'
+//                            });
+//                        });
+//                    }
+//                });
+//            }
+//            showNotification();
+//
+//            // 在 SW 中使用
 
-            self.addEventListener('notificationclick', function (event) {
-                event.notification.close();
-                if (event.action === 'archive') {
-                    silentlyArchiveEmail();
-                } else {
-                    clients.openWindow("/inbox");
-                }
-            }, false);
+//            self.registration.showNotification("New mail from Alice", {
+//                actions: [{action: 'archive', title: "Archive"}]
+//            });
+//
+//            self.addEventListener('notificationclick', function (event) {
+//                event.notification.close();
+//                if (event.action === 'archive') {
+//                    silentlyArchiveEmail();
+//                } else {
+//                    clients.openWindow("/inbox");
+//                }
+//            }, false);
 
 
             window.addEventListener('load', function () {
