@@ -47,37 +47,23 @@
 //
 //        if ('serviceWorker' in navigator && 'PushManager' in window) {
 
-            function showNotification() {
-                Notification.requestPermission(function (result) {
-                    if ( 1) {
-                        navigator.serviceWorker.ready.then(function (registration) {
-                            registration.showNotification('在SW里使用', {
-                                body: '本周的内容，27日开考急',
-                                icon: 'images/icons/apple-icon-120x120.png',
-                                vibrate: [200, 100, 200, 100, 200, 100, 200],
-                                tag: 'vibration-sample'
-                            });
-                        });
-                    }
-                });
-            }
-            showNotification();
+
 ////
-////            // 在 SW 中使用
-//
-////            self.registration.showNotification("New mail from Alice", {
-////                actions: [{action: 'archive', title: "Archive"}]
-////            });
-////
-////            self.addEventListener('notificationclick', function (event) {
-////                event.notification.close();
-////                if (event.action === 'archive') {
-////                    silentlyArchiveEmail();
-////                } else {
-////                    clients.openWindow("/inbox");
-////                }
-////            }, false);
-//
+            // 在 SW 中使用
+
+            self.registration.showNotification("New mail from Alice", {
+                actions: [{action: 'archive', title: "Archive"}]
+            });
+
+            self.addEventListener('notificationclick', function (event) {
+                event.notification.close();
+                if (event.action === 'archive') {
+                    silentlyArchiveEmail();
+                } else {
+                    clients.openWindow("/inbox");
+                }
+            }, false);
+
 //
 ////            window.addEventListener('load', function () {
 ////
