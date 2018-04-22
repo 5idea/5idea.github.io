@@ -51,9 +51,7 @@
 ////
             // 在 SW 中使用
 
-            self.registration.showNotification("New mail from Alice", {
-                actions: [{action: 'archive', title: "Archive"}]
-            });
+
 
             self.addEventListener('notificationclick', function (event) {
                 event.notification.close();
@@ -65,19 +63,23 @@
             }, false);
 
 //
-////            window.addEventListener('load', function () {
-////
-////                navigator.serviceWorker.register('sw.js')
-////                    .then(
-////                        function (registration) {// Registration was successful
-////                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-////                        },
-////
-////                        function (err) {// registration failed :(
-////                            console.log('ServiceWorker registration failed: ', err);
-////                        });
-////
-////            });
+            window.addEventListener('load', function () {
+
+                navigator.serviceWorker.register('sw.js')
+                    .then(
+                        function (registration) {// Registration was successful
+                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        },
+
+                        function (err) {// registration failed :(
+                            console.log('ServiceWorker registration failed: ', err);
+                        });
+
+                self.registration.showNotification("New mail from Alice", {
+                    actions: [{action: 'archive', title: "Archive"}]
+                });
+
+            });
 //
 //
 //            window.addEventListener('push', function (event) {
